@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>シニア恋愛劇場 ｜ 綴り手 ほのか – RE-NO PRODUCTION</title>
+<meta name="description" content="シニア恋愛劇場〜甘く、切なく、時に激しく〜。60歳からの恋を上品に描く、大人の朗読劇場。綴り手・ほのか。RE-NO PRODUCTION の作品ポートフォリオ。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#160f12; --bg2:#1d1419; --surface:#241a20; --surface2:#2c2026;
+    --gold:#d8a24a; --gold-soft:#ecc680; --rose:#c98a76;
+    --text:#f3ece6; --text2:#cabbb1; --muted:#8f807a;
+    --serif:'Shippori Mincho','Yu Mincho',serif;
+    --sans:'Zen Kaku Gothic New','Hiragino Sans',sans-serif;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:104px 0;}
+  .eyebrow{font-family:var(--serif);color:var(--gold);letter-spacing:.3em;font-size:.78rem;text-transform:uppercase;display:block;margin-bottom:16px;}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:.04em;line-height:1.5;margin-bottom:14px;}
+  .lead{color:var(--text2);max-width:660px;font-size:1.02rem;}
+  .center{text-align:center;}
+  .center .lead{margin:0 auto;}
+
+  /* top back-bar */
+  .backbar{position:absolute;top:0;left:0;right:0;z-index:5;}
+  .backbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:22px;}
+  .back{font-family:var(--serif);font-size:.82rem;letter-spacing:.12em;color:var(--text2);transition:.3s;}
+  .back:hover{color:var(--gold);}
+  .backbar .who{font-family:var(--serif);font-size:.74rem;letter-spacing:.26em;color:var(--muted);}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;}
+  .hero .bg{position:absolute;inset:0;z-index:0;
+    background:linear-gradient(180deg,rgba(22,15,18,.55) 0%,rgba(22,15,18,.62) 45%,rgba(22,15,18,.92) 100%),
+               url('images/hero-soine.jpg') center/cover no-repeat;}
+  .hero-inner{position:relative;z-index:2;}
+  .hero .ttl{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,7vw,5rem);letter-spacing:.08em;line-height:1.2;margin-bottom:14px;text-shadow:0 4px 30px rgba(0,0,0,.6);}
+  .hero .sub{font-family:var(--serif);color:var(--gold-soft);font-size:clamp(1rem,2.6vw,1.5rem);letter-spacing:.14em;margin-bottom:26px;}
+  .hero .tag{color:var(--text2);max-width:560px;font-size:1.02rem;margin-bottom:34px;}
+  .cta{display:inline-flex;gap:12px;flex-wrap:wrap;}
+  .btn{font-family:var(--serif);letter-spacing:.08em;font-size:.95rem;padding:14px 30px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);transition:.3s;cursor:pointer;}
+  .btn:hover{background:var(--gold);color:var(--bg);}
+  .btn.solid{background:var(--gold);color:var(--bg);}
+  .btn.solid:hover{background:var(--gold-soft);}
+
+  /* ABOUT */
+  .about{background:var(--bg2);}
+  .about .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .about .frame{border-radius:14px;overflow:hidden;border:1px solid rgba(216,162,74,.2);box-shadow:0 30px 70px rgba(0,0,0,.5);aspect-ratio:16/10;}
+  .about .frame img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  /* WORKS */
+  .works{background:var(--bg);}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;}
+  .card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(216,162,74,.14);background:var(--surface);transition:.4s;}
+  .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.55);}
+  .card:hover img{transform:scale(1.06);}
+  .card .meta{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;
+    background:linear-gradient(180deg,transparent 45%,rgba(15,9,11,.9) 100%);opacity:0;transition:.4s;}
+  .card:hover .meta{opacity:1;}
+  .card .meta .t{font-family:var(--serif);font-size:1rem;color:var(--gold-soft);}
+
+  /* HONOKA */
+  .honoka{background:var(--bg2);}
+  .honoka .grid{display:grid;grid-template-columns:200px 1fr;gap:44px;align-items:center;}
+  .honoka .av{width:200px;height:200px;border-radius:50%;overflow:hidden;border:2px solid var(--gold);box-shadow:0 16px 40px rgba(0,0,0,.5);}
+  .honoka .av img{width:100%;height:100%;object-fit:cover;}
+
+  /* LINKS */
+  .links-sec{background:linear-gradient(160deg,#160f12,#241a20);text-align:center;}
+  .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+
+  footer{background:var(--bg);padding:46px 0;text-align:center;color:var(--muted);font-size:.82rem;border-top:1px solid rgba(216,162,74,.12);}
+  footer a{color:var(--gold);}
+  footer .sep{color:var(--gold);margin:0 8px;}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media(max-width:840px){
+    section{padding:78px 0;}
+    .about .grid{grid-template-columns:1fr;gap:30px;}
+    .gallery{grid-template-columns:1fr 1fr;}
+    .honoka .grid{grid-template-columns:1fr;justify-items:center;text-align:center;gap:24px;}
+  }
+  @media(max-width:520px){.gallery{grid-template-columns:1fr;}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;}.reveal{opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="bg"></div>
+    <div class="backbar">
+      <div class="wrap">
+        <a class="back" href="../rinopro/index.html">← RE-NO PRODUCTION</a>
+        <span class="who">綴り手 ほのか</span>
+      </div>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="ttl">シニア恋愛劇場</div>
+      <div class="sub">〜 甘く、切なく、時に激しく 〜</div>
+      <p class="tag">60歳からの恋を、上品に描く。静かな伏線と余韻でつづる、大人のための朗読劇場です。</p>
+      <div class="cta">
+        <a class="btn solid" href="#works">作品を見る</a>
+        <a class="btn" href="https://www.youtube.com/@428-LOVE-theater1" target="_blank" rel="noopener">YouTube ▶</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="wrap">
+      <div class="grid">
+        <div class="reveal">
+          <span class="eyebrow">About</span>
+          <h2>人生の機微を、<br>そっとすくいあげる。</h2>
+          <p class="lead">
+            「シニア恋愛劇場」は、60歳からの恋と再出発を描く朗読チャンネルです。
+            再婚、長年連れ添った夫婦の秘密、古い手紙や指輪——日常にひそむ違和感から、静かに伏線を回収していく物語。
+            <br><br>
+            夜・間接照明・実写風の落ち着いた映像と、心に寄り添う朗読で、大人の恋の<strong>甘さと切なさ</strong>を上品に届けます。🌙
+          </p>
+        </div>
+        <div class="frame reveal">
+          <img src="images/banner.png" alt="シニア恋愛劇場 〜甘く、切なく、時に激しく〜" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section class="works" id="works">
+    <div class="wrap">
+      <span class="eyebrow reveal">Works</span>
+      <h2 class="reveal">作品 — シニア恋愛劇場</h2>
+      <p class="lead reveal">大人の恋物語を、上品な映像と朗読で。心に残る一夜の物語たち。</p>
+      <div class="gallery">
+        <div class="card reveal"><img src="images/hero-soine.jpg" alt="寄り添う夜のものがたり" loading="lazy"><div class="meta"><div class="t">寄り添う夜のものがたり</div></div></div>
+        <div class="card reveal"><img src="images/work-saikai.png" alt="68歳・志津子 再会の夜" loading="lazy"><div class="meta"><div class="t">68歳・志津子 — 再会の夜</div></div></div>
+        <div class="card reveal"><img src="images/work-10days.png" alt="10日だけ、恋人でいて" loading="lazy"><div class="meta"><div class="t">10日だけ、恋人でいて──</div></div></div>
+        <div class="card reveal"><img src="images/scene-lamp.png" alt="灯りをはさんで" loading="lazy"><div class="meta"><div class="t">灯りをはさんで</div></div></div>
+        <div class="card reveal"><img src="images/scene-window.png" alt="夜景のむこうに" loading="lazy"><div class="meta"><div class="t">夜景のむこうに</div></div></div>
+        <div class="card reveal"><img src="images/scene-kinkon.png" alt="金婚式の夜に" loading="lazy"><div class="meta"><div class="t">金婚式の夜に</div></div></div>
+        <div class="card reveal"><img src="images/scene-ring.png" alt="指輪を見つめて" loading="lazy"><div class="meta"><div class="t">指輪を見つめて</div></div></div>
+        <div class="card reveal"><img src="images/scene-key.png" alt="錆びた鍵のなぞ" loading="lazy"><div class="meta"><div class="t">錆びた鍵のなぞ</div></div></div>
+        <div class="card reveal"><img src="images/scene-portrait.png" alt="写真の中のわたし" loading="lazy"><div class="meta"><div class="t">写真の中のわたし</div></div></div>
+        <div class="card reveal"><img src="images/scene-konin.png" alt="もう一度、夫婦に" loading="lazy"><div class="meta"><div class="t">もう一度、夫婦に</div></div></div>
+        <div class="card reveal"><img src="images/cruise-deck.png" alt="月夜の甲板で" loading="lazy"><div class="meta"><div class="t">月夜の甲板で</div></div></div>
+        <div class="card reveal"><img src="images/cruise-night.png" alt="船上の、満月の夜" loading="lazy"><div class="meta"><div class="t">船上の、満月の夜</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONOKA -->
+  <section class="honoka">
+    <div class="wrap">
+      <div class="grid">
+        <div class="av reveal"><img src="images/honoka.png" alt="綴り手 ほのか" loading="lazy"></div>
+        <div class="reveal">
+          <span class="eyebrow">Storyteller</span>
+          <h2>綴り手 — ほのか</h2>
+          <p class="lead">
+            大人の恋物語を、そっと綴る人。顔も声も出さず、言葉と世界観だけで物語を届けます。
+            朗読はAI（NOWAが手伝うことも）。顔のない量産朗読とは一線を画す、唯一無二の上品な世界観をつくっています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section class="links-sec">
+    <div class="wrap">
+      <span class="eyebrow">Channel</span>
+      <h2>物語を、受け取ってください。</h2>
+      <p class="lead">言葉が、そっと寄り添う夜に。</p>
+      <div class="links">
+        <a class="btn solid" href="https://www.youtube.com/@428-LOVE-theater1" target="_blank" rel="noopener">YouTube ▶</a>
+        <a class="btn" href="https://x.com/novelist428" target="_blank" rel="noopener">X</a>
+        <a class="btn" href="https://lit.link/seniorlove" target="_blank" rel="noopener">lit.link</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      © 2026 シニア恋愛劇場 ／ 綴り手 ほのか<span class="sep">/</span><a href="../rinopro/index.html">RE-NO PRODUCTION</a>
+    </div>
+  </footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
